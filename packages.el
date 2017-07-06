@@ -34,7 +34,6 @@
       (setq julia-repl-executable julia-executable)
       (add-hook 'julia-mode-hook 'julia-repl-mode)
       (spacemacs/set-leader-keys-for-major-mode 'julia-repl-mode
-        "s'" 'julia-repl--start-inferior
         "sc" 'julia-repl-send-region-or-line
         "sb" 'julia-repl-send-buffer
         "sl" 'julia-repl-send-line
