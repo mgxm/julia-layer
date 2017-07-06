@@ -1,0 +1,47 @@
+#+TITLE: julia layer
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+- [[#install][Install]]
+  - [[#configuration][Configuration]]
+- [[#key-bindings][Key bindings]]
+  - [[#interactive-repl][Interactive REPL]]
+
+* Description
+This layer provides support for the Julia language with the following feature:
+  - Edit Julia files using [[https://github.com/JuliaEditorSupport/julia-emacs][julia-mode]]
+  - Interactive REPL [[https://github.com/tpapp/julia-repl/][julia-repl]]
+  - Error checking using flycheck.([[https://github.com/gdkrmr/flycheck-julia][flycheck-julia]])
+* Install
+#+BEGIN_SRC shell
+git clone https://github.com/marciogm/julia-layer ~/.emacs.d/private/julia
+#+END_SRC
+
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =julia= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+** Configuration
+You can configure you Julia path with:
+#+BEGIN_SRC emacs-lisp
+(julia :variables julia-executable "/path/to/bin/julia")
+#+END_SRC
+
+* Key bindings
+
+** Interactive REPL
+
+| Key Binding | Description                                        |
+|-------------+----------------------------------------------------|
+| ~SPC m s '~ | Raise the REPL or create a new one                 |
+| ~SPC m s c~ | Send region (when applicable) or line to REPL      |
+| ~SPC m s b~ | Send whole buffer to REPL                          |
+| ~SPC m s l~ | Send line to REPL                                  |
+| ~SPC m e~   | Invoke `@edit` on region (when applicable) or line |
+| ~SPC m d~   | Invoke `@doc` on symbol                            |
+| ~SPC m w~   | `workspace()`                                      |
+| ~SPC m m~   | Expand macro                                       |
+
+
+
